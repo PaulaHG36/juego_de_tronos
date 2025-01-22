@@ -22,7 +22,6 @@ class FavoritesScreen extends StatelessWidget {
                 final character = favorites[index];
                 return InkWell(
                   onTap: () {
-                    // Al hacer clic sobre un personaje, navegar a la pantalla de detalles
                     Navigator.push(
                       context,
                       MaterialPageRoute(
