@@ -31,6 +31,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
+  //Lista de pantallas para la navegación
   final List<Widget> _screens = [
     HomeScreen(),
     ListScreen(),
@@ -47,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Juego de Tronos')),
-      body: _screens[_selectedIndex],
+      body: _screens[_selectedIndex], //Cargar la pantalla correspondiente
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

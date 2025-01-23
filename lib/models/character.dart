@@ -26,9 +26,10 @@ class Character {
     );
   }
 
+  //Función para comprobar que un campo no sea nulo ni esté vacío
   static String _getValidString(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Desconocido';
+      return 'Desconocido'; //Si el valor es nulo o vacío, devulve 'Desconocido'
     }
     return value;
   }

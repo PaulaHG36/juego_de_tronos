@@ -19,21 +19,22 @@ class _HomeScreenState extends State<HomeScreen> {
     _getRandomCharacter();
   }
 
+  //Función para obtener un personaje aleatorio
   Future<void> _getRandomCharacter() async {
     setState(() {
-      _isLoading = true;
+      _isLoading = true; //Indica que se está cargando el personaje
     });
 
     try {
       Character randomCharacter = await _apiService.fetcRandomCharacter();
       setState(() {
-        _randomCharacter = randomCharacter;
+        _randomCharacter = randomCharacter; //Asignamos el personaje aleatorio
       });
     } catch (e) {
       print('Error al obtener un personaje aleatorio: $e');
     } finally {
       setState(() {
-        _isLoading = false;
+        _isLoading = false; //Se termina de cargar
       });
     }
   }
@@ -46,7 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: Icon(Icons.refresh),
-            onPressed: _getRandomCharacter,
+            onPressed:
+                _getRandomCharacter, //Al presionar, obtenemos un nuevo personaje aleatorio
           )
         ],
       ),

@@ -20,8 +20,9 @@ class _ListScreenState extends State<ListScreen> {
     _loadCharacters();
   }
 
+  //Cargar los personajes para la página actual
   Future<void> _loadCharacters() async {
-    if (_isLoading) return;
+    if (_isLoading) return; //No hacer otra petición si ya estamos cargando
     setState(() {
       _isLoading = true;
     });
@@ -29,7 +30,8 @@ class _ListScreenState extends State<ListScreen> {
     try {
       List<Character> newCharacters = await _apiService.fetchCharacters(_page);
       setState(() {
-        _characters = newCharacters;
+        _characters =
+            newCharacters; //Cargar los personajes correspondientes a la página
       });
     } catch (e) {
       print('Error al cargar personajes: $e');
@@ -40,17 +42,18 @@ class _ListScreenState extends State<ListScreen> {
     }
   }
 
+  //Funciones para navegar entre las páginas
   void _nextPage() {
     setState(() {
-      _page++;
+      _page++; //Ir a la siguiente
     });
-    _loadCharacters();
+    _loadCharacters(); //Cargar los personajes de la nueva página
   }
 
   void _previousPage() {
     if (_page > 1) {
       setState(() {
-        _page--;
+        _page--; //Ir a la página anterior
       });
       _loadCharacters();
     }
@@ -88,6 +91,7 @@ class _ListScreenState extends State<ListScreen> {
               },
             ),
           ),
+          //Contenedor de paginación con botones y número de página
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -95,7 +99,9 @@ class _ListScreenState extends State<ListScreen> {
               children: [
                 IconButton(
                   icon: Icon(Icons.arrow_left),
-                  onPressed: _page > 1 ? _previousPage : null,
+                  onPressed: _page > 1
+                      ? _previousPage
+                      : null, //Desactivar si se está en la primera página
                 ),
                 Text(
                   'Página $_page',
