@@ -16,7 +16,22 @@ class MyApp extends StatelessWidget {
       create: (context) => FavoritesProvider(),
       child: MaterialApp(
         title: 'Juego de Tronos',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: ThemeData(
+            //primarySwatch: Colors.blue,
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.white,
+              titleTextStyle: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            scaffoldBackgroundColor: const Color.fromARGB(255, 115, 173, 184),
+            textTheme: TextTheme(
+              bodyLarge: TextStyle(color: Colors.black),
+              bodyMedium: TextStyle(color: Colors.black),
+              bodySmall: TextStyle(color: Colors.black),
+            )),
         home: MainScreen(),
       ),
     );
