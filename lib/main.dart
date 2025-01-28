@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             //primarySwatch: Colors.blue,
             appBarTheme: AppBarTheme(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.black,
               titleTextStyle: TextStyle(
-                color: Colors.black,
+                color: const Color.fromARGB(255, 148, 0, 0),
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            scaffoldBackgroundColor: const Color.fromARGB(255, 115, 173, 184),
+            scaffoldBackgroundColor: const Color.fromARGB(255, 148, 0, 0),
             textTheme: TextTheme(
               bodyLarge: TextStyle(color: Colors.black),
               bodyMedium: TextStyle(color: Colors.black),
